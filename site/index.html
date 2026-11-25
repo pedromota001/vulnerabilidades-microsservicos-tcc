@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vulnerabilidades em Microsserviços</title>
+  <meta name="description" content="Dados navegáveis da análise do TCC sobre vulnerabilidades de segurança em arquiteturas de microsserviços.">
+  <script>
+    try { var t = localStorage.getItem('tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="topo-inner">
+      <a class="marca" href="#/"><small id="marca-sub"></small>Vulnerabilidades em Microsserviços</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" aria-label="Principal">
+        <a href="#/">Início</a>
+        <a href="#/taxonomia">Taxonomia</a>
+        <a href="#/vulnerabilidades">Vulnerabilidades</a>
+        <a href="#/mitigacoes">Mitigações</a>
+        <a href="#/matriz">Matriz de trade-offs</a>
+        <a href="#/estudos">Estudos</a>
+        <a href="#/sobre">Sobre</a>
+      </nav>
+      <button class="tema-btn" type="button">Modo escuro</button>
+    </div>
+  </header>
+  <main id="conteudo" tabindex="-1"><p class="carregando">Carregando dados…</p></main>
+  <footer class="rodape"><div id="rodape"></div></footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

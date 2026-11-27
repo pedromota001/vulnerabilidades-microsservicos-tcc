@@ -1,5 +1,7 @@
 # Vulnerabilidades de Segurança em Arquiteturas de Microsserviços: Taxonomia, Mitigações e Trade-offs
 
+[![DOI](https://zenodo.org/badge/github/1470364035.svg)](https://doi.org/10.5281/zenodo.24610900)
+
 Dados de pesquisa do Trabalho de Conclusão de Curso (TCC) em Ciência da Computação
 da Universidade Católica de Pernambuco (UNICAP), 2026.
 
@@ -80,9 +82,12 @@ As colunas N a P da `Q4_Trechos` estão ocultas porque apenas sustentam essas f�
 ## Como citar
 
 CARVALHO, Pedro Mota Santos Lindoso de. **Vulnerabilidades de Segurança em Arquiteturas
-de Microsserviços: Taxonomia, Mitigações e Trade-offs**: planilha de análise. Recife:
-Universidade Católica de Pernambuco, 2026. Conjunto de dados. Disponível em:
-https://github.com/pedromota001/vulnerabilidades-microsservicos-tcc.
+de Microsserviços: Taxonomia, Mitigações e Trade-offs**: planilha de análise. Versão 1.0.
+Recife: Universidade Católica de Pernambuco, 2026. Conjunto de dados. DOI:
+10.5281/zenodo.24610901. Disponível em: https://doi.org/10.5281/zenodo.24610901.
+
+Esta referência aponta para a versão 1.0, usada no trabalho. Para citar todas as
+versões, use o DOI 10.5281/zenodo.24610900, que sempre leva à versão mais recente.
 
 Também é possível usar o botão **"Cite this repository"**, na lateral desta página.
 

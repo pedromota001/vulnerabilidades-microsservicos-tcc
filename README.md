@@ -27,11 +27,25 @@ Toda a análise é rastreável: cada vulnerabilidade, mitigação e célula da m
 trade-offs pode ser seguida até o trecho e a página do estudo de origem, e cada decisão
 tomada está registrada na aba `Registro_Decisoes`.
 
+## Site
+
+Os dados da planilha também podem ser explorados no site
+https://pedromota001.github.io/vulnerabilidades-microsservicos-tcc/,
+que apresenta a taxonomia, as vulnerabilidades, as mitigações, a matriz de trade-offs
+e os estudos selecionados de forma navegável. O site é gerado automaticamente a partir
+da planilha, que é a sua única fonte de dados.
+
 ## Conteúdo do repositório
 
-| Arquivo | Descrição |
+| Caminho | Descrição |
 |---|---|
 | `dados/planilha-analise-tcc2.xlsx` | Planilha de análise completa, citada no Apêndice A do trabalho |
+| `scripts/` | Script que lê a planilha e gera os dados usados pelo site |
+| `site/` | Código do site (HTML, CSS e JavaScript); os dados são gerados a partir da planilha, sem nada escrito à mão |
+| `tests/` | Testes que conferem se os dados do site são idênticos aos da planilha e se os números batem com os do trabalho |
+| `.github/workflows/` | Rotina que, a cada atualização na branch `master`, gera os dados, roda os testes e publica o site no GitHub Pages |
+| `CITATION.cff` | Dados para citação do repositório |
+| `LICENSE` | Texto da licença CC BY 4.0 |
 
 A primeira aba da planilha, **Leia-me**, explica a estrutura, as convenções e as regras
 de contagem. Recomenda-se lê-la antes das demais.
@@ -69,3 +83,16 @@ CARVALHO, Pedro Mota Santos Lindoso de. **Vulnerabilidades de Segurança em Arqu
 de Microsserviços: Taxonomia, Mitigações e Trade-offs**: planilha de análise. Recife:
 Universidade Católica de Pernambuco, 2026. Conjunto de dados. Disponível em:
 https://github.com/pedromota001/vulnerabilidades-microsservicos-tcc.
+
+Também é possível usar o botão **"Cite this repository"**, na lateral desta página.
+
+## Licença
+
+A planilha de análise deste repositório está disponível sob a licença
+[Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt-br).
+Você pode copiar, redistribuir e adaptar o material para qualquer finalidade, desde que
+cite a autoria.
+
+Os trechos curtos dos estudos analisados, reproduzidos na planilha entre aspas e com
+indicação de página, continuam pertencendo aos seus autores e não estão cobertos por
+esta licença.

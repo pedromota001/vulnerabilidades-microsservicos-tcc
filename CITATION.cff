@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Se você usar estes dados, cite-os conforme os metadados abaixo."
+type: dataset
+title: "Vulnerabilidades de Segurança em Arquiteturas de Microsserviços: Taxonomia, Mitigações e Trade-offs: planilha de análise"
+version: "1.0"
+date-released: 2026-11-27
+authors:
+  - family-names: Carvalho
+    given-names: Pedro Mota Santos Lindoso de
+    affiliation: Universidade Católica de Pernambuco (UNICAP)
+abstract: "Planilha de análise do Trabalho de Conclusão de Curso em Ciência da Computação da Universidade Católica de Pernambuco (UNICAP), 2026, orientado pelo Prof. Pedro Rafael Ximenes do Carmo. Revisão estruturada da literatura com 17 estudos, que reúne uma taxonomia de 43 vulnerabilidades em 3 frentes e 12 categorias, um catálogo de 27 mitigações e uma matriz de trade-offs."
+license: CC-BY-4.0
+repository-code: "https://github.com/pedromota001/vulnerabilidades-microsservicos-tcc"
+url: "https://github.com/pedromota001/vulnerabilidades-microsservicos-tcc"
+keywords:
+  - microsserviços
+  - segurança
+  - vulnerabilidades
+  - taxonomia
+  - mitigações
+  - revisão da literatura

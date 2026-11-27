@@ -178,5 +178,23 @@ class FidelidadeAPlanilha(unittest.TestCase):
         self.assertTrue(all(f["titulo"] for f in self.d["frentes"]))
 
 
+class Licenca(unittest.TestCase):
+    def test_licenca_vem_do_citation_cff(self):
+        codigo = g.codigo_licenca_cff(g.RAIZ / "CITATION.cff")
+        nome, url = g.ler_licenca()
+        if codigo in g.LICENCAS:
+            self.assertEqual((nome, url), g.LICENCAS[codigo])
+        else:
+            self.assertEqual(url, "")
+
+    def test_sem_campo_volta_ao_comportamento_anterior(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            cff = Path(tmp) / "CITATION.cff"
+            cff.write_text("cff-version: 1.2.0\ntitle: x\n", encoding="utf-8")
+            self.assertEqual(g.codigo_licenca_cff(cff), "")
+            self.assertEqual(g.codigo_licenca_cff(Path(tmp) / "nao-existe.cff"), "")
+
+
 if __name__ == "__main__":
     unittest.main()

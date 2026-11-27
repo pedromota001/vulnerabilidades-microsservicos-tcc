@@ -251,7 +251,7 @@
       '<h1>Sobre</h1><div class="texto">' +
       '<p><b>Trabalho:</b> ' + esc(s.titulo) + '</p><p><b>Autor:</b> ' + esc(s.autor) + '<br><b>Orientador:</b> ' + esc(s.orientador) + '</p><p>' + esc(inst) + '</p>' +
       '<h2>Como citar</h2><div class="cartao citacao">' + cit + '</div>' +
-      '<h2>Licença</h2><p>' + (s.licenca ? esc(s.licenca) : 'Consulte o repositório.') + '</p>' +
+      '<h2>Licença</h2><p>' + (s.licenca ? (s.licenca_url ? '<a href="' + esc(s.licenca_url) + '" rel="license noopener">' + esc(s.licenca) + '</a>' : esc(s.licenca)) : 'Consulte o repositório.') + '</p>' +
       '<h2>Método, em resumo</h2><p>' + esc(s.escopo.replace(/^•\s*/, '')) + '</p><p>' + esc(s.estrutura) + '</p>' +
       '<p>Regras de contagem:</p><ol>' + s.regras_contagem.map(function (r) { return '<li>' + esc(r.replace(/^\d+\.\s*/, '')) + '</li>'; }).join('') + '</ol>' +
       '<p><b>Tipos de ligação entre vulnerabilidade e mitigação:</b></p><ul>' + Object.keys(D.tipos_ligacao).map(function (t) { return '<li>' + etq(t) + ' ' + esc(D.tipos_ligacao[t]) + '</li>'; }).join('') + '</ul>' +

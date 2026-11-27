@@ -118,6 +118,37 @@ def valor_por_rotulo(abas, nome, rotulo, coluna=3):
     raise KeyError(f"Rótulo '{rotulo}' não encontrado na aba {nome}")
 
 
+# ---------------------------------------------------------------- licença
+# Nome em português e link de cada código SPDX que o campo `license` do CITATION.cff pode ter.
+LICENCAS = {
+    "CC-BY-4.0": ("Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)",
+                  "https://creativecommons.org/licenses/by/4.0/deed.pt-br"),
+}
+
+
+def codigo_licenca_cff(caminho):
+    """Código do campo `license` do CITATION.cff, ou "" se o arquivo ou o campo não existirem."""
+    if not caminho.exists():
+        return ""
+    for linha in caminho.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"license:\s*[\"']?([^\"'#\s]+)", linha)
+        if m:
+            return m.group(1)
+    return ""
+
+
+def ler_licenca():
+    """(nome, link). Usa o CITATION.cff; sem o campo (ou com código desconhecido),
+    volta ao comportamento anterior: primeira linha do LICENSE, sem link."""
+    codigo = codigo_licenca_cff(RAIZ / "CITATION.cff")
+    if codigo in LICENCAS:
+        return LICENCAS[codigo]
+    lic = RAIZ / "LICENSE"
+    if lic.exists():
+        return next((l.strip() for l in lic.read_text(encoding="utf-8").splitlines() if l.strip()), ""), ""
+    return "", ""
+
+
 # ---------------------------------------------------------------- montagem
 def montar(abas, estilos, cores):
     estudos = tabela(abas, "Corpus", ["codigo", "autores", "ano", "veiculo", "tipo", "nivel", "titulo", "doi"],
@@ -211,9 +242,8 @@ def montar(abas, estilos, cores):
         "regras_contagem": [l for l in leia if re.match(r"\d\. ", l)],
         "paginas": achar("• Páginas:"),
         "status": achar("Versão final (nov"),
-        "licenca": next((l.strip() for l in (RAIZ / "LICENSE").read_text(encoding="utf-8").splitlines() if l.strip()), "")
-        if (RAIZ / "LICENSE").exists() else "",
     }
+    sobre["licenca"], sobre["licenca_url"] = ler_licenca()
 
     # Indicadores (recalculados das abas de base).
     exp = [v for v in vulns if v["ligacao_mais_forte"] == "Explícita"]
